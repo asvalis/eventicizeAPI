@@ -1,13 +1,10 @@
-var express = require('express'),
-app = express(),
-port = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
 
-app.use(express.static(__dirname + '/'));
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
 
-app.get('/', function(req, res){
-    res.render('default.htm');
-  });
-
-app.listen(port);
-
-console.log('todo list RESTful API server started on: ' + port);
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
