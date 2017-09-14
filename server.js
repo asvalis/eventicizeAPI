@@ -1,5 +1,6 @@
 var express = require('express'),
 app = express(),
+cors = require('cors'),
 port = process.env.PORT || 3000,
 mongoose = require('mongoose'),
 Task = require('./api/models/eventicizeModel'), //created model loading here
@@ -9,6 +10,7 @@ bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://127.0.0.1:27017/d');
 
+app.options('*', cors()) // include before other routes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'))

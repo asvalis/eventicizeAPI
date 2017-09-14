@@ -16,7 +16,7 @@ var eventJSON = '';
           res.on('data', function(data_) { data += data_.toString(); });
           res.on('end', function() {
             parser.parseString(data, function(err, result) {
-             response.send(result.rss.channel);
+            response.send(result.rss.channel);
             });
           });
         }
