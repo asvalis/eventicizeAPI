@@ -4,7 +4,8 @@
   "description": "RESTful event tracking",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/asvalis/eventicizeAPI/issues"
   },
-  "homepage": "https://github.com/asvalis/eventicizeAPI#readme"
+  "homepage": "https://github.com/asvalis/eventicizeAPI#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11"
+  }
 }
