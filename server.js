@@ -1,10 +1,23 @@
-const express = require('express')
-const app = express()
+var express = require('express'),
+app = express(),
+port = process.env.PORT || 3000,
+mongoose = require('mongoose'),
+Task = require('./api/models/eventicizeModel'), //created model loading here
+bodyParser = require('body-parser');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://127.0.0.1:27017/d');
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+var routes = require('./api/routes/eventicizeRoutes'); //importing route
+routes(app); //register the route
+
+
+app.listen(port);
+
+
+console.log('todo list RESTful API server started on: ' + port);
