@@ -1,10 +1,9 @@
 'use strict';
 module.exports = function(app) {
   var eventList = require('../controllers/eventicizeController.js');
-
   // todoList Routes
- // app.route('/events')
-   // .get(eventList.list_all_events)
+  app.route('/events')
+    .get(eventList.list_all_events)
     //.post(todoList.create_a_task);
 
 

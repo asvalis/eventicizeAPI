@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var EventSchema = new Schema({
+var TaskSchema = new Schema({
   name: {
     type: String,
     required: 'Kindly enter the name of the event'
@@ -13,4 +13,4 @@ var EventSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Events', EventSchema);
+module.exports = mongoose.model('Tasks', TaskSchema);
